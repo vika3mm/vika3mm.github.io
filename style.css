@@ -1,0 +1,429 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #ffe8e8 0%, #f8a8a8 100%);
+    min-height: 100vh;
+    cursor: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Шапка */
+.header {
+    background: linear-gradient(135deg, #ec1e4e 0%, #e40b66 100%);
+    padding: 60px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="circles" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle fill="rgba(255,255,255,0.15)" cx="10" cy="10" r="3"/></pattern></defs><rect fill="url(%23circles)" width="100" height="100"/></svg>');
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.photo-container {
+    position: relative;
+}
+
+.photo-frame {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    padding: 8px;
+    background: linear-gradient(45deg, #ff6b9d, #ff8eb4);
+    box-shadow: 0 10px 30px rgba(247, 18, 95, 0.3);
+    position: relative;
+    animation: float 3s ease-in-out infinite;
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+}
+
+.butterfly {
+    position: absolute;
+    font-size: 30px;
+    animation: fly 6s ease-in-out infinite;
+}
+
+.butterfly-1 {
+    top: -20px;
+    right: -15px;
+    animation-delay: 0s;
+}
+
+.butterfly-2 {
+    bottom: -20px;
+    left: -15px;
+    animation-delay: 2s;
+}
+
+.header-info {
+    flex: 1;
+}
+
+.name {
+    font-family: 'Playfair Display', serif;
+    font-size: 3em;
+    color: white;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.profession {
+    font-size: 1.3em;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 20px;
+}
+
+.contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-size: 1.1em;
+}
+
+/* Основные секции */
+.section {
+    background: white;
+    margin: 40px 0;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(255, 107, 157, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #ff6b9d, #ff8eb4);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    color: #ff6b9d;
+    margin-bottom: 15px;
+}
+
+.decoration {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #ff6b9d, #ff8eb4);
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+/* Обо мне */
+.about-me .content-box {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+/* Опыт работы */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, #ff6b9d, #ff8eb4);
+}
+
+.timeline-item {
+    display: flex;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.timeline-date {
+    width: 120px;
+    padding-right: 20px;
+    text-align: right;
+    font-weight: 500;
+    color: #ff6b9d;
+}
+
+.timeline-content {
+    flex: 1;
+    padding-left: 40px;
+    position: relative;
+}
+
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ff6b9d;
+    border: 4px solid white;
+    box-shadow: 0 0 0 2px #ff6b9d;
+}
+
+.timeline-content h3 {
+    color: #ff6b9d;
+    margin-bottom: 5px;
+}
+
+.timeline-content ul {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.timeline-content li {
+    margin-bottom: 5px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.timeline-content li::before {
+    content: '🦋';
+    position: absolute;
+    left: 0;
+}
+
+/* Навыки */
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.skill-category h3 {
+    color: #ff6b9d;
+    margin-bottom: 20px;
+    font-size: 1.3em;
+}
+
+.skill-item {
+    margin-bottom: 20px;
+}
+
+.skill-item span {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.skill-bar {
+    height: 8px;
+    background: #ffe8e8;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background: linear-gradient(90deg, #ff6b9d, #ff8eb4);
+    border-radius: 4px;
+    width: 0%;
+    transition: width 1s ease-in-out;
+}
+
+/* Образование */
+.education-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.education-card {
+    background: #fff5f7;
+    padding: 30px;
+    border-radius: 15px;
+    border-left: 4px solid #ff6b9d;
+    transition: transform 0.3s ease;
+}
+
+.education-card:hover {
+    transform: translateY(-5px);
+}
+
+.education-card h3 {
+    color: #ff6b9d;
+    margin-bottom: 10px;
+}
+
+.institution {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.date {
+    color: #666;
+    font-style: italic;
+}
+
+/* Хобби */
+.hobbies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.hobby-card {
+    background: #fff5f7;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.hobby-card:hover {
+    transform: translateY(-10px);
+    border-color: #ff6b9d;
+    box-shadow: 0 15px 30px rgba(255, 107, 157, 0.2);
+}
+
+.hobby-icon {
+    font-size: 3em;
+    margin-bottom: 15px;
+}
+
+.hobby-card h3 {
+    color: #ff6b9d;
+    margin-bottom: 10px;
+}
+
+/* Футер */
+.footer {
+    background: linear-gradient(135deg, #ff9eb5 0%, #ff7eb3 100%);
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 60px;
+}
+
+/* Стили для летающей бабочки */
+.butterfly-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.floating-butterfly {
+    position: fixed;
+    font-size: 25px;
+    opacity: 0.8;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    filter: drop-shadow(0 0 8px rgba(255, 107, 157, 0.7));
+    pointer-events: none !important;
+}
+
+/* Анимации */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes fly {
+    0%, 100% { 
+        transform: translate(0, 0) rotate(0deg); 
+    }
+    25% { 
+        transform: translate(10px, -15px) rotate(5deg); 
+    }
+    50% { 
+        transform: translate(20px, 5px) rotate(-5deg); 
+    }
+    75% { 
+        transform: translate(10px, 15px) rotate(3deg); 
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .skills-grid,
+    .education-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .timeline::before {
+        left: 20px;
+    }
+    
+    .timeline-date {
+        width: 80px;
+    }
+    
+    .name {
+        font-size: 2.5em;
+    }
+    
+    .section {
+        padding: 30px 20px;
+    }
+    
+    body {
+        cursor: auto;
+    }
+}
